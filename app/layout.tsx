@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
+import { shadcn } from "@clerk/ui/themes";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,16 +27,7 @@ export default function RootLayout({
   return (
     <ClerkProvider
       appearance={{
-        variables: {
-          colorPrimary: "#8b5cf6",
-          colorBackground: "#09090b",
-          colorForeground: "#fafafa",
-          colorMutedForeground: "#a1a1aa",
-          colorInput: "#18181b",
-          colorInputForeground: "#fafafa",
-          colorNeutral: "#27272a",
-          borderRadius: "0.75rem",
-        },
+        theme: shadcn,
       }}
     >
       <html

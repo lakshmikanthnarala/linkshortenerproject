@@ -27,9 +27,6 @@ export default async function DashboardPage() {
           <Button asChild>
             <Link href="/">Back home</Link>
           </Button>
-          <Button variant="outline" asChild>
-            <Link href="/sign-in">Open sign-in</Link>
-          </Button>
         </div>
       </div>
     </main>
