@@ -41,7 +41,7 @@ export default async function Home() {
     <div className="flex min-h-screen flex-col bg-[radial-gradient(circle_at_top,_rgba(139,92,246,0.18),_transparent_45%),linear-gradient(135deg,_#fafafa_0%,_#f4f4f5_100%)] font-sans text-zinc-950 dark:bg-[radial-gradient(circle_at_top,_rgba(139,92,246,0.24),_transparent_40%),linear-gradient(135deg,_#09090b_0%,_#18181b_100%)] dark:text-zinc-50">
       <header className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-5 lg:px-8">
         <div>
-          <p className="text-lg font-semibold tracking-tight">LinkShortener</p>
+          <p className="text-lg font-semibold">LinkShortener</p>
           <p className="text-sm text-zinc-600 dark:text-zinc-400">
             Short links, simplified.
           </p>
@@ -71,7 +71,7 @@ export default async function Home() {
               <div className="inline-flex items-center rounded-full border border-violet-200 bg-violet-50 px-3 py-1 text-sm font-medium text-violet-700 dark:border-violet-500/30 dark:bg-violet-500/10 dark:text-violet-300">
                 New • Smarter link sharing for modern teams
               </div>
-              <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
+              <h1 className="mt-6 text-4xl font-semibold sm:text-5xl lg:text-6xl">
                 Turn long URLs into polished links your audience will love.
               </h1>
               <p className="mt-5 max-w-2xl text-lg leading-8 text-zinc-600 dark:text-zinc-300">
@@ -106,7 +106,7 @@ export default async function Home() {
             </div>
 
             <div className="rounded-3xl border border-zinc-200 bg-zinc-50 p-6 shadow-inner dark:border-zinc-800 dark:bg-zinc-900/70">
-              <p className="text-sm font-medium uppercase tracking-[0.2em] text-zinc-500 dark:text-zinc-400">
+              <p className="text-sm font-medium uppercase text-zinc-500 dark:text-zinc-400">
                 Why teams use it
               </p>
               <div className="mt-6 space-y-4">
