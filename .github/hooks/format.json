@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "hooks": {
+    "postToolUse": [
+      {
+        "type": "command",
+        "bash": "bash .github/hooks/run-prettier-if-needed.sh \"$toolName\""
+      }
+    ]
+  }
+}

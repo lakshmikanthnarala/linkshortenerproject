@@ -2,6 +2,7 @@ import { and, desc, eq } from "drizzle-orm";
 
 import { db } from "@/db";
 import { links } from "@/db/schema";
+import { isValidHttpUrl, normalizeHttpUrl } from "@/lib/utils";
 
 function generateShortCode(length = 6) {
   const alphabet = "abcdefghijklmnopqrstuvwxyz0123456789";
@@ -41,6 +42,11 @@ export async function createLinkForUser(
   clerkUserId: string,
   input: { url: string }
 ) {
+  if (!isValidHttpUrl(input.url)) {
+    throw new Error("Only http(s) URLs are allowed");
+  }
+
+  const safeUrl = normalizeHttpUrl(input.url);
   const maxAttempts = 5;
 
   for (let attempt = 0; attempt < maxAttempts; attempt += 1) {
@@ -51,7 +57,7 @@ export async function createLinkForUser(
         .insert(links)
         .values({
           clerkUserId,
-          url: input.url,
+          url: safeUrl,
           shortCode,
         })
         .returning({
@@ -60,7 +66,6 @@ export async function createLinkForUser(
 
       return { shortCode: link.shortCode };
     } catch {
-      // If a unique collision occurs, retry with a new short code.
       if (attempt === maxAttempts - 1) {
         throw new Error("Unable to generate a unique short code");
       }
@@ -75,9 +80,14 @@ export async function updateLinkForUser(
   id: number,
   input: { url: string }
 ) {
+  if (!isValidHttpUrl(input.url)) {
+    throw new Error("Only http(s) URLs are allowed");
+  }
+
+  const safeUrl = normalizeHttpUrl(input.url);
   const result = await db
     .update(links)
-    .set({ url: input.url, updatedAt: new Date() })
+    .set({ url: safeUrl, updatedAt: new Date() })
     .where(and(eq(links.id, id), eq(links.clerkUserId, clerkUserId)))
     .returning({ id: links.id, url: links.url, updatedAt: links.updatedAt });
 
