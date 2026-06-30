@@ -1,4 +1,4 @@
-import { pgTable, text, timestamp, uuid } from 'drizzle-orm/pg-core';
+import { bigint, pgTable, text, timestamp } from 'drizzle-orm/pg-core';
 
 export const links = pgTable('links', {
   id: bigint('id', { mode: 'number' }).primaryKey().generatedAlwaysAsIdentity(),

@@ -1,3 +1,6 @@
+---
+description:Read this before implementing or modifying authentication in the project.
+---
 # Clerk Auth Rules for LinkShortener
 
 This document defines auth behavior for the LinkShortener app.

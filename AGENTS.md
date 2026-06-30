@@ -1,7 +1,5 @@
 # Agent Instructions for LinkShortener Project
 
-This is extremely important: BEFORE generating any code, you MUST read the relevant individual instruction files in the '/docs' directory. Do not skip this step. The docs files are the source of truth for project-specific requirements, and failing to read them before coding is not acceptable.
-
 ## Core expectations
 - Follow the existing project structure and conventions.
 - Prefer small, maintainable changes over large rewrites.
@@ -13,10 +11,6 @@ This is extremely important: BEFORE generating any code, you MUST read the relev
 - components/ui/: reusable UI primitives.
 - db/: database schema and database connection helpers.
 - lib/: shared helper utilities.
-- docs/: project-specific instruction files for agents.
-
-## Auth documentation
-- Consult `/docs/auth.md` for Clerk auth rules and protected-route behavior.
 
 ## Required conventions
 - Use the App Router pattern in app/.
@@ -37,7 +31,5 @@ This is extremely important: BEFORE generating any code, you MUST read the relev
 
 ## Documentation guidance
 - Keep this root instructions file concise and high level.
-- Place detailed guidance in separate Markdown files inside docs/.
-- When introducing a new pattern or workflow, add or update the relevant document in docs/.
 
 
