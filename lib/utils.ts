@@ -30,7 +30,11 @@ export function normalizeHttpUrl(value: string) {
   return url.toString()
 }
 
-export function getClientIpFromHeaders(headers: Headers | undefined) {
+type HeadersLike = {
+  get(name: string): string | null | undefined;
+};
+
+export function getClientIpFromHeaders(headers: HeadersLike | undefined) {
   if (!headers) {
     return "unknown"
   }

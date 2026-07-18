@@ -38,7 +38,7 @@ export async function createLink(
     return { success: false, error: "Unauthorized" };
   }
 
-  const clientHeaders = headers();
+  const clientHeaders = await headers();
   const clientIp = getClientIpFromHeaders(clientHeaders);
   enforceRateLimit(`create:${user.id}:${clientIp}`, 12, 60_000);
 
@@ -95,7 +95,7 @@ export async function updateLink(
     return { success: false, error: "Unauthorized" };
   }
 
-  const clientHeaders = headers();
+  const clientHeaders = await headers();
   const clientIp = getClientIpFromHeaders(clientHeaders);
   enforceRateLimit(`write:${user.id}:${clientIp}`, 30, 60_000);
 
@@ -140,7 +140,7 @@ export async function deleteLink(
     return { success: false, error: "Unauthorized" };
   }
 
-  const clientHeaders = headers();
+  const clientHeaders = await headers();
   const clientIp = getClientIpFromHeaders(clientHeaders);
   enforceRateLimit(`write:${user.id}:${clientIp}`, 30, 60_000);
 

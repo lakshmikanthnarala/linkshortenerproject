@@ -38,6 +38,9 @@
     "tsx": "^4.22.4",
     "typescript": "^5"
   },
+  "overrides": {
+    "uuid": "^14.0.0"
+  },
   "allowScripts": {
     "prettier@3.9.4": true
   }
